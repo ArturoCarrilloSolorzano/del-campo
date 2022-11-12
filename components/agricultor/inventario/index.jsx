@@ -45,6 +45,7 @@ export default function Hero() {
               index % 2 ? (color = "bg-gray-50") : (color = "bg-white");
               return (
                 <div
+                  key={index}
                   className={`${color} px-4 py-5 sm:grid sm:grid-cols-5 sm:gap-4 sm:px-6`}
                 >
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0">

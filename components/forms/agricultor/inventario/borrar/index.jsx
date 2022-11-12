@@ -2,7 +2,7 @@ import { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-export default function Example(props) {
+export default function Index(props) {
   const { open, setOpen } = props;
 
   const cancelButtonRef = useRef(null);
