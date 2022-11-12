@@ -71,7 +71,7 @@ export default function Hero() {
                     </div>
                     <div>
                       <button
-                        className="bg-slate-500 p-2 rounded text-gray-50  w-20 hover:bg-slate-600"
+                        className="bg-orange-500 p-2 rounded text-gray-50  w-20 hover:bg-orange-400"
                         onClick={() => setVerOpen(true)}
                       >
                         Ver
@@ -79,7 +79,7 @@ export default function Hero() {
                     </div>
                     <div>
                       <button
-                        className="bg-slate-500 p-2 rounded text-gray-50  w-20 hover:bg-slate-600"
+                        className="bg-orange-500 p-2 rounded text-gray-50  w-20 hover:bg-orange-400"
                         onClick={() => setBorrarOpen(true)}
                       >
                         Borrar
