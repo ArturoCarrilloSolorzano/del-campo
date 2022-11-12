@@ -3,7 +3,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Agricultor", href: "/agricultor/inventario", current: true },
+  { name: "Agricultor", href: "/agricultor/inventario", current: false },
   { name: "Cliente", href: "#", current: false },
   { name: "Transportista", href: "#", current: false },
 ];
@@ -14,7 +14,7 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-custom-green">
+    <Disclosure as="nav" className="bg-green-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

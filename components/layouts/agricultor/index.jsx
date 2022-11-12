@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <div className="flex flex-col h-screen justify-between bg-white">
       <Navbar />
-      <main>{children}</main>
+      <main className="h-full">{children}</main>
       <Footer />
     </div>
   );

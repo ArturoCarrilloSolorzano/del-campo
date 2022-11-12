@@ -16,7 +16,7 @@ export default function Hero() {
   const [borrarOpen, setBorrarOpen] = useState(false);
 
   return (
-    <div className="-mt-48">
+    <div>
       <Agregar open={agregarOpen} setOpen={(value) => setAgregarOpen(value)} />
       <Ver open={verOpen} setOpen={(value) => setVerOpen(value)} />
       <Borrar open={borrarOpen} setOpen={(value) => setBorrarOpen(value)} />
