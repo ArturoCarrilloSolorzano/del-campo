@@ -1,12 +1,10 @@
 export default function Hero() {
   return (
-
-    <div className= 'container h-80 mx-auto mt-2 shadow-2xl'>
-      <div className='h-full bg-[url("../public/farmland.jpg")] 
+      <div className='container h-80 mx-auto  mt-2 shadow-2xl bg-[url("../public/farmland.jpg")] 
       bg-center bg-no-repeat bg-cover rounded-xl 
-      max-w-screen-sm flex items-center text-center flex-col'>
+      max-w-screen-lg flex items-center text-center flex-col'>
         
-        <img src = 'logo.jpg' alt = "logo" className="w-1/4"/>
+        <img src = 'logo.jpg' alt = "logo" className="w-1/6 rounded-bl-lg"/>
 
         <div className="flex items-center w-full flex-auto">
           <div className='bg-gradient-to-br from-green-50 to-green-600 font-medium 
@@ -28,7 +26,6 @@ export default function Hero() {
         </div>
         
       </div>
-    </div> 
     
   );
 }
