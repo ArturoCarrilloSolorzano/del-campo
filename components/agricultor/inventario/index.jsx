@@ -1,6 +1,6 @@
 import { PaperClipIcon } from "@heroicons/react/20/solid";
 import React, { useState } from "react";
-import Agregar from "../../forms/agricultor/inventario/agregar";
+import Actualizar from "../../forms/agricultor/inventario/actualizar";
 import Ver from "../../forms/agricultor/inventario/ver";
 import Borrar from "../../forms/agricultor/inventario/borrar";
 
@@ -11,15 +11,66 @@ export default function Hero() {
     { producto: "Frijol", medida: "Toneladas", cantidad: 400, precio: 2500 },
   ]);
 
-  const [agregarOpen, setAgregarOpen] = useState(false);
+  const [actualizarOpen, setActualizarOpen] = useState(false);
   const [verOpen, setVerOpen] = useState(false);
   const [borrarOpen, setBorrarOpen] = useState(false);
 
+  const [producto, setProducto] = useState("");
+  const [medida, setMedida] = useState("");
+  const [cantidad, setCantidad] = useState("");
+  const [precio, setPrecio] = useState(0);
+  const [position, setPosition] = useState("");
+
+  function openUpdate(objeto, index) {
+    setProducto(objeto.producto);
+    setMedida(objeto.medida);
+    setCantidad(objeto.cantidad);
+    setPrecio(objeto.precio);
+    setPosition(index);
+    setActualizarOpen(true);
+  }
+
+  function modify() {
+    setActualizarOpen(false);
+    let tempInventory = [...inventory];
+    tempInventory[position] = { producto, medida, cantidad, precio };
+    setInventory(tempInventory);
+  }
+
+  function openDelete(index) {
+    setPosition(index);
+    setBorrarOpen(true);
+  }
+
+  function deleteInv() {
+    setBorrarOpen(false);
+    let tempInventory = [...inventory];
+    tempInventory.splice(position, 1);
+    setInventory(tempInventory);
+  }
+
+  function addInv() {}
   return (
     <div>
-      <Agregar open={agregarOpen} setOpen={(value) => setAgregarOpen(value)} />
+      <Actualizar
+        open={actualizarOpen}
+        setOpen={(value) => setActualizarOpen(value)}
+        producto={producto}
+        setProducto={(value) => setProducto(value.target.value)}
+        medida={medida}
+        setMedida={(value) => setMedida(value.target.value)}
+        cantidad={cantidad}
+        setCantidad={(value) => setCantidad(value.target.value)}
+        precio={precio}
+        setPrecio={(value) => setPrecio(value.target.value)}
+        onModify={() => modify()}
+      />
       <Ver open={verOpen} setOpen={(value) => setVerOpen(value)} />
-      <Borrar open={borrarOpen} setOpen={(value) => setBorrarOpen(value)} />
+      <Borrar
+        open={borrarOpen}
+        setOpen={(value) => setBorrarOpen(value)}
+        onDelete={() => deleteInv()}
+      />
       <div className=" bg-white shadow sm:rounded-lg lg:m-20">
         <div className="px-4 py-5 sm:px-6">
           <h3 className="text-lg font-medium leading-6 text-gray-900">
@@ -58,29 +109,21 @@ export default function Hero() {
                     {inv.cantidad}
                   </dd>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0">
-                    5000.00$
+                    {inv.precio} $
                   </dd>
-                  <dd className="mt-1 text-sm text-gray-900 flex flex-row justify-between  sm:mt-0">
-                    <div>
+                  <dd className="mt-1 text-sm text-gray-900 flex flex-row justify-start  sm:mt-0">
+                    <div className="mr-10">
                       <button
                         className="bg-orange-500 p-2 rounded text-gray-50  w-20 hover:bg-orange-400"
-                        onClick={() => setAgregarOpen(true)}
+                        onClick={() => openUpdate(inv, index)}
                       >
-                        Agregar
+                        Actualizar
                       </button>
                     </div>
                     <div>
                       <button
                         className="bg-orange-500 p-2 rounded text-gray-50  w-20 hover:bg-orange-400"
-                        onClick={() => setVerOpen(true)}
-                      >
-                        Ver
-                      </button>
-                    </div>
-                    <div>
-                      <button
-                        className="bg-orange-500 p-2 rounded text-gray-50  w-20 hover:bg-orange-400"
-                        onClick={() => setBorrarOpen(true)}
+                        onClick={() => openDelete(index)}
                       >
                         Borrar
                       </button>

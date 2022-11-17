@@ -3,9 +3,9 @@ import Footer from "../../footer";
 
 export default function Layout({ children }) {
   return (
-    <div className="flex flex-col h-screen justify-between bg-white">
+    <div className="flex flex-col justify-between bg-white">
       <Navbar />
-      <main className="h-full">{children}</main>
+      <main className="min-h-screen">{children}</main>
       <Footer />
     </div>
   );

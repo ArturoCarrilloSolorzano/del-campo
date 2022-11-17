@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
 export default function Index(props) {
-  const { open, setOpen } = props;
+  const { open, setOpen, onDelete } = props;
 
   const cancelButtonRef = useRef(null);
 
@@ -52,13 +52,11 @@ export default function Index(props) {
                         as="h3"
                         className="text-lg font-medium leading-6 text-gray-900"
                       >
-                        Deactivate account
+                        Borrar producto
                       </Dialog.Title>
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
-                          Are you sure you want to deactivate your account? All
-                          of your data will be permanently removed. This action
-                          cannot be undone.
+                          Estas seguro que quieres borrar este producto ?
                         </p>
                       </div>
                     </div>
@@ -68,9 +66,9 @@ export default function Index(props) {
                   <button
                     type="button"
                     className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
-                    onClick={() => setOpen(false)}
+                    onClick={() => onDelete()}
                   >
-                    Deactivate
+                    Borrar
                   </button>
                   <button
                     type="button"
