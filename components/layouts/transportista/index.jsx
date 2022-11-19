@@ -1,10 +1,12 @@
 import Navbar from "../../navbar";
+import Footer from "../../footer";
 
 export default function Layout({ children }) {
   return (
-    <>
+    <div className="flex flex-col justify-between bg-white">
       <Navbar />
-      <main>{children}</main>
-    </>
+      <main className="min-h-screen">{children}</main>
+      <Footer />
+    </div>
   );
 }
