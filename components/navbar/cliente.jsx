@@ -3,9 +3,13 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Agricultor", href: "/agricultor/perfil", current: false },
-  { name: "Cliente", href: "/cliente/perfil", current: false },
-  { name: "Transportista", href: "/transportista/perfil", current: false },
+  { name: "Mercado", href: "/cliente/mercado", current: false },
+  { name: "Perfil", href: "/cliente/perfil", current: false },
+  {
+    name: "Peticion de compra",
+    href: "/cliente/peticion_compra",
+    current: false,
+  },
 ];
 
 function classNames(...classes) {
