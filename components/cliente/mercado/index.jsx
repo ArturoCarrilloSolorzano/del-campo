@@ -32,7 +32,7 @@ export default function Index() {
         </p>
       </button>
       <button
-        onClick={() => console.log("Hola")}
+        onClick={() => goToVendedores("Aguacates")}
         className="bg-gray-50 m-5 shadow flex flex-row  justify-around items-center p-5 transition ease-in-out delay-150 hover:scale-110 sm:rounded-lg"
       >
         <Aguacate width={"7em"} height={"7em"} />
@@ -41,7 +41,7 @@ export default function Index() {
         </p>
       </button>
       <button
-        onClick={() => console.log("Hola")}
+        onClick={() => goToVendedores("Frijoles")}
         className="bg-gray-50 m-5 shadow flex flex-row  justify-around items-center p-5 transition ease-in-out delay-150 hover:scale-110 sm:rounded-lg"
       >
         <Frijol width={"7em"} height={"7em"} />
@@ -50,49 +50,49 @@ export default function Index() {
         </p>
       </button>
       <button
-        onClick={() => console.log("Hola")}
+        onClick={() => goToVendedores("Brocoli")}
         className="bg-gray-50 m-5 shadow flex flex-row  justify-around items-center p-5 transition ease-in-out delay-150 hover:scale-110 sm:rounded-lg"
       >
         <Brocoli width={"7em"} height={"7em"} />
         <p className="text-4xl font-semibold text-gray-800">Brocoli</p>
       </button>
       <button
-        onClick={() => console.log("Hola")}
+        onClick={() => goToVendedores("Zanahorias")}
         className="bg-gray-50 m-5 shadow flex flex-row  justify-around items-center p-5 transition ease-in-out delay-150 hover:scale-110 sm:rounded-lg"
       >
         <Carrot width={"7em"} height={"7em"} />
         <p className="text-4xl font-semibold text-gray-800">Zanahoria</p>
       </button>
       <button
-        onClick={() => console.log("Hola")}
+        onClick={() => goToVendedores("Mora azul")}
         className="bg-gray-50 m-5 shadow flex flex-row  justify-around items-center p-5 transition ease-in-out delay-150 hover:scale-110 sm:rounded-lg"
       >
         <MoraAzul width={"7em"} height={"7em"} />
         <p className="text-4xl font-semibold text-gray-800">Mora azul</p>
       </button>
       <button
-        onClick={() => console.log("Hola")}
+        onClick={() => goToVendedores("Maiz")}
         className="bg-gray-50 m-5 shadow flex flex-row  justify-around items-center p-5 transition ease-in-out delay-150 hover:scale-110 sm:rounded-lg"
       >
         <Maiz width={"7em"} height={"7em"} />
         <p className="text-4xl font-semibold text-gray-800">Maiz</p>
       </button>
       <button
-        onClick={() => console.log("Hola")}
+        onClick={() => goToVendedores("Lechugas")}
         className="bg-gray-50 m-5 shadow flex flex-row  justify-around items-center p-5 transition ease-in-out delay-150 hover:scale-110 sm:rounded-lg"
       >
         <Lechuga width={"7em"} height={"7em"} />
         <p className="text-4xl font-semibold text-gray-800">Lechuga</p>
       </button>
       <button
-        onClick={() => console.log("Hola")}
+        onClick={() => goToVendedores("Ejotes")}
         className="bg-gray-50 m-5 shadow flex flex-row  justify-around items-center p-5 transition ease-in-out delay-150 hover:scale-110 sm:rounded-lg"
       >
         <Ejote width={"7em"} height={"7em"} />
         <p className="text-4xl font-semibold text-gray-800">Ejote</p>
       </button>
       <button
-        onClick={() => console.log("Hola")}
+        onClick={() => goToVendedores("Cebollas")}
         className="bg-gray-50 m-5 shadow flex flex-row  justify-around items-center p-5 transition ease-in-out delay-150 hover:scale-110 sm:rounded-lg"
       >
         <Cebolla width={"7em"} height={"7em"} />

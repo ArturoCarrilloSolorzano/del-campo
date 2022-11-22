@@ -1,5 +1,5 @@
-import Peticiones from "../../../components/agricultor/peticiones_compra";
-import AgricultorLayout from "../../../components/layouts/agricultor";
+import Peticiones from "../../../components/cliente/peticiones_compra";
+import ClienteLayout from "../../../components/layouts/cliente";
 
 export default function Index() {
   return (
@@ -16,5 +16,5 @@ export default function Index() {
 }
 
 Index.getLayout = function getLayout(page) {
-  return <AgricultorLayout>{page}</AgricultorLayout>;
+  return <ClienteLayout>{page}</ClienteLayout>;
 };
