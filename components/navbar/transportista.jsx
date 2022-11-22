@@ -1,11 +1,15 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const navigation = [
-  { name: "Agricultor", href: "/agricultor/perfil", current: false },
-  { name: "Cliente", href: "/cliente/perfil", current: false },
-  { name: "Transportista", href: "/transportista/perfil", current: false },
+  { name: "Perfil", href: "/transportista/perfil", current: false },
+  {
+    name: "Peticiones de transporte",
+    href: "/transportista/peticiones_transporte",
+    current: false,
+  },
 ];
 
 function classNames(...classes) {
@@ -32,7 +36,7 @@ export default function Example() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <p>Del campo</p>
+                  <Link href="/">Del campo</Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">

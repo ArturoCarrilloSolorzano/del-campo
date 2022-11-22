@@ -4,7 +4,7 @@ import Actualizar from "../../forms/agricultor/perfil/actualizar";
 export default function Index() {
   const [actualizarOpen, setActualizarOpen] = useState(false);
   const [data, setData] = useState({
-    email: "arturo.carrillo.solorzano@gmail.com",
+    email: "pedro@gmail.com",
   });
   const [email, setEmail] = useState("");
 
@@ -53,7 +53,7 @@ export default function Index() {
                 Nombre completo
               </dt>
               <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                Arturo Carrillo Solorzano
+                Pedro Lopez Torres
               </dd>
             </div>
             <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -61,7 +61,7 @@ export default function Index() {
                 Tipo de usuario
               </dt>
               <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                Agricultor
+                Transportista
               </dd>
             </div>
             <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

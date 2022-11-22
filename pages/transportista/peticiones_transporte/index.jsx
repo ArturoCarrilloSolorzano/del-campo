@@ -1,4 +1,4 @@
-import Perfil from "../../../components/transportista/perfil";
+import Peticiones from "../../../components/transportista/peticiones_compra";
 import TransportistaLayout from "../../../components/layouts/transportista";
 
 export default function Index() {
@@ -9,7 +9,7 @@ export default function Index() {
         <h1 className="p-20 text-5xl">Perfil</h1>
       </div>
       <div className="-mt-48">
-        <Perfil />
+        <Peticiones />
       </div>
     </div>
   );

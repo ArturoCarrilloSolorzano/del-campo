@@ -43,7 +43,7 @@ export default function Index() {
         open={actualizarOpen}
         setOpen={(value) => setActualizarOpen(value)}
         estado={estado}
-        setEmail={(value) => setEstado(value.target.value)}
+        setEstado={(value) => setEstado(value.target.value)}
         onModify={() => modify()}
       />
       {data.map((pedido, index) => {

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Actualizar from "../../forms/agricultor/pedidos/actualizar";
 
 export default function Index() {
+  const [actualizarOpen, setActualizarOpen] = useState(false);
   const [data, setData] = useState([
     {
       producto: "Berenjenas",
@@ -8,6 +10,8 @@ export default function Index() {
       medida: "Kilos",
       total: "3000",
       estado: "pedido",
+      origen: "Tepatitlan Jal.",
+      destino: "Guadalajara Jal.",
       fecha: "10/12/2022",
     },
     {
@@ -15,10 +19,24 @@ export default function Index() {
       cantidad: "100",
       medida: "Kilos",
       total: "10000",
-      estado: "aceptado",
+      estado: "pedido",
+      origen: "Tequila Jal.",
+      destino: "Guadalajara Jal.",
       fecha: "8/12/2022",
     },
   ]);
+
+  function aceptar(pos) {
+    let tempData = [...data];
+    tempData[pos].estado = "aceptado";
+    setData(tempData);
+  }
+
+  function denegar(posicion) {
+    let tempData = [...data];
+    tempData.splice(posicion, 1);
+    setData(tempData);
+  }
 
   return (
     <>
@@ -38,6 +56,24 @@ export default function Index() {
                     Fecha: {pedido.fecha}
                   </p>
                 </div>
+                <div>
+                  {pedido.estado !== "aceptado" && (
+                    <div>
+                      <button
+                        className="bg-green-500 p-2 rounded text-gray-50  min-w-20 w-24 mr-5 hover:bg-orange-400"
+                        onClick={() => aceptar(index)}
+                      >
+                        Aceptar
+                      </button>
+                      <button
+                        className="bg-red-500 p-2 rounded text-gray-50  min-w-20 w-24  hover:bg-orange-400"
+                        onClick={() => denegar(index)}
+                      >
+                        No aceptar
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
             <div className="border-t border-gray-200">
@@ -56,7 +92,7 @@ export default function Index() {
                     {pedido.medida}
                   </dd>
                 </div>
-                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className="text-sm font-medium text-gray-500">
                     Cantidad
                   </dt>
@@ -64,8 +100,22 @@ export default function Index() {
                     {pedido.cantidad}
                   </dd>
                 </div>
+                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className="text-sm font-medium text-gray-500">Origen</dt>
+                  <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                    {pedido.origen}
+                  </dd>
+                </div>
                 <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Total</dt>
+                  <dt className="text-sm font-medium text-gray-500">Destino</dt>
+                  <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                    {pedido.destino}
+                  </dd>
+                </div>
+                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className="text-sm font-medium text-gray-500">
+                    Pago por transporte
+                  </dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                     {pedido.total} $
                   </dd>

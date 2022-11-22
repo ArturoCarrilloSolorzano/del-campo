@@ -71,7 +71,6 @@ export default function Index(props) {
                           </label>
                           <input
                             value={producto}
-                            onChange={(value) => setProducto(value)}
                             disabled={true}
                             type="text"
                             id="first_name"
