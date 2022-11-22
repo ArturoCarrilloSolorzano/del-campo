@@ -1,6 +1,14 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Hero() {
+  const router = useRouter();
+
+  function goToVIew(nombre) {
+    router.push({
+      pathname: `/${nombre}`,
+    });
+  }
   return (
     <div className="min-w-full bg-green-800 grid grid-cols-2">
       <div className=" text-white  lg:m-10">
@@ -13,10 +21,16 @@ export default function Hero() {
           alimentos, así como crear conexiones directas entre productores y
           consumidores.
         </p>
-        <button className="mt-5 mr-5 bg-custom-orange sm:w-[100px] lg:w-[200px] max-w-[300px] h-10 rounded-xl">
+        <button
+          onClick={() => goToVIew("signup")}
+          className="mt-5 mr-5 bg-custom-orange sm:w-[100px] lg:w-[200px] max-w-[300px] h-10 rounded-xl"
+        >
           Registrarse
         </button>
-        <button className="mt-5 bg-custom-orange sm:w-[100px] lg:w-[200px] max-w-[300px] h-10 rounded-xl">
+        <button
+          onClick={() => goToVIew("login")}
+          className="mt-5 bg-custom-orange sm:w-[100px] lg:w-[200px] max-w-[300px] h-10 rounded-xl"
+        >
           Entrar
         </button>
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 mt-5 mb-32">
